@@ -14,7 +14,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('pages.user.index');
+        //La requête qui listes les utilisateurs
+        //select * from users;
+        $users = User::all();
+        return view('pages.user.index', compact('users'));
     }
 
     /**
